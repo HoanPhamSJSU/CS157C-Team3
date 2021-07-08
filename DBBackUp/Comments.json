@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "60dddeeb19288af44a388740"
+  },
+  "title": "Best Shelter",
+  "description": "One of the best shelter in Bay Area",
+  "posted_date": "07/01/2021"
+},{
+  "_id": {
+    "$oid": "60dddeeb19288af44a388741"
+  },
+  "title": "Best Shelter",
+  "description": "One of the best shelter in Bay Area",
+  "posted_date": "07/01/2021"
+},{
+  "_id": {
+    "$oid": "60dddeeb19288af44a388742"
+  },
+  "title": "Good",
+  "description": "The shelter's onwer,Frank and Steve, are one the kindest people on earth.",
+  "posted_date": "06/01/2021"
+},{
+  "_id": {
+    "$oid": "60dddeed19288af44a388743"
+  },
+  "title": "Nice Place to stay",
+  "description": "The free meal was good",
+  "posted_date": "06/01/2021"
+}]

@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "60ddd3fb6409b5220ece2510"
+  },
+  "shelter_name": "Emergency Housing Consortium",
+  "address": "507 Valley Way, Milpitas, CA 95035",
+  "website": "http://www.homefirstscc.org/",
+  "phoneNumber": "14085392100",
+  "latitude": "37.4318",
+  "longitude": "-121.915",
+  "description": "a leading provider of services, shelter, and housing opportunities to the homeless and those at risk of homelessness in Santa Clara County."
+},{
+  "_id": {
+    "$oid": "60ddd3fb6409b5220ece2511"
+  },
+  "shelter_name": "Abode Services",
+  "address": "588 Brown Rd, Fremont, CA 94539",
+  "website": "http://www.abodeservices.org/",
+  "phoneNumber": "15102520910",
+  "latitude": " 37.497",
+  "longitude": "-121.927",
+  "description": "Abode Services mission is to end homelessness by assisting low-income, un-housed people, including those with special needs, to secure stable, supportive housing; and to be advocates for the removal of the causes of homelessness."
+},{
+  "_id": {
+    "$oid": "60ddd3fb6409b5220ece2512"
+  },
+  "shelter_name": "The James F. Boccardo Regional Reception Center",
+  "address": "2011 Little Orchard St, San Jose, CA 95125",
+  "website": "https://www.homefirstscc.org/",
+  "phoneNumber": "14085392100",
+  "latitude": "37.3058",
+  "longitude": "-121.87",
+  "description": "We envision a community in which everyone has a home."
+},{
+  "_id": {
+    "$oid": "60ddd5bf19288af44a38873e"
+  },
+  "shelter_name": "Family Supportive Housing",
+  "address": "692 N King Rd, San Jose, CA 95133",
+  "website": "http://www.familysupportivehousing.org/",
+  "phoneNumber": "14089268885",
+  "latitude": "37.3705",
+  "longitude": "-121.862",
+  "description": "We offer families a respite, an opportunity to make life-altering changes, and a system to aid in finding permanent housing."
+},{
+  "_id": {
+    "$oid": "60ddd5c119288af44a38873f"
+  },
+  "shelter_name": "LifeMoves",
+  "address": "260 Commercial St, San Jose, CA 95112",
+  "website": "https://lifemoves.org/",
+  "phoneNumber": "14082711630",
+  "latitude": "37.3639",
+  "longitude": "-121.902",
+  "description": "LifeMoves has the expertise to rapidly return people to stable housing, but a solution to homelessness requires all of us."
+}]
