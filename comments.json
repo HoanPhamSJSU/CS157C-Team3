@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "60dddeeb19288af44a388740"
+  },
+  "title": "Best Shelter",
+  "description": "One of the best shelter in Bay Area",
+  "posted_date": "07/01/2021",
+  "Rate": "9.5/10",
+  "shelter_name": "Emergency Housing Consortium"
+},{
+  "_id": {
+    "$oid": "60dddeeb19288af44a388741"
+  },
+  "title": "Good choice for your next Shelter",
+  "description": "I think this  shelter  is one of good in Bay Area",
+  "posted_date": "07/01/2021",
+  "Rate": "9/10",
+  "shelter_name": "Abode Services"
+},{
+  "_id": {
+    "$oid": "60dddeeb19288af44a388742"
+  },
+  "title": "Good",
+  "description": "The shelter's onwer,Frank and Steve, are one the kindest people on earth.",
+  "posted_date": "06/01/2021",
+  "Rate": "8/10",
+  "shelter_name": "The James F. Boccardo Regional Reception Center"
+},{
+  "_id": {
+    "$oid": "60dddeed19288af44a388743"
+  },
+  "title": "Nice Place to stay",
+  "description": "The free meal was good",
+  "posted_date": "06/10/2021",
+  "Rate": "8.5/10",
+  "shelter_name": "Family Supportive Housing"
+},{
+  "_id": {
+    "$oid": "60e6b89427a5a971b7a8a416"
+  },
+  "title": "New home",
+  "description": "This place make you feel like you as new home. Every people nice and treat me very good. It makes me very happy",
+  "posted_date": "06/20/2020",
+  "Rate": "9.5/10",
+  "shelter_name": "LifeMoves"
+},{
+  "_id": {
+    "$oid": "60e6b90e27a5a971b7a8a417"
+  },
+  "title": "Save my life",
+  "description": "WHen I dont have money to pay rent and click our of my room by owner. This place is save my life to give me warm bed for my hard time.",
+  "posted_date": "06/13/2021",
+  "Rate": "9.5/10",
+  "shelter_name": "Emergency Housing Consortium"
+},{
+  "_id": {
+    "$oid": "60e7357844ae542193963e00"
+  },
+  "title": "Best choice for shelter",
+  "description": "You can have free meal with nice , warm place to stay",
+  "posted_date": "07/04/2021",
+  "Rate": "9.5/10",
+  "shelter_name": "Family Supportive Housing"
+},{
+  "_id": {
+    "$oid": "60e7361a44ae542193963e01"
+  },
+  "title": "Warm place for homeless people",
+  "description": "I got lay off and did not have money to offer place , so this place give me warm bed. Thank you",
+  "posted_date": "07/2/2020",
+  "Rate": "9/10",
+  "shelter_name": "LifeMoves"
+},{
+  "_id": {
+    "$oid": "60e73a2244ae542193963e0e"
+  },
+  "title": "Good choice for best place",
+  "description": "If you are hungry, this one is best choice for you when they give you free meal",
+  "posted_date": "06/20/2021",
+  "Rate": "9.5/10",
+  "shelter_name": "Family Supportive Housing"
+},{
+  "_id": {
+    "$oid": "60e73b9344ae542193963e0f"
+  },
+  "title": "Best Shelter place for homeless",
+  "description": "One of the best shelter in Bay Area where you can have nice bed and free meal",
+  "posted_date": "07/03/2021",
+  "Rate": "10/10",
+  "shelter_name": "Emergency Housing Consortium"
+}]
