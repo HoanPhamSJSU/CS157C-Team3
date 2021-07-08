@@ -21,9 +21,7 @@ const shelterSchema = mongoose.Schema({
     },
     description: {
         type: String,
-    },
-   
-
+    }
 });
 
 

@@ -18,10 +18,11 @@ app.use(function(req, res, next) {
   });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : true})); 
+app.use(bodyParser.urlencoded({extended : true}));
 // app.use(authRoute);
-connectDatabase(); 
+connectDatabase();
 // ROUTES FOR OUR API
+var port = process.env.PORT || 7000;        // set our port
 // =============================================================================
 
 var router = express.Router();             
