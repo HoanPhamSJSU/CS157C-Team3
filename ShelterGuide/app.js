@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended : true}));
 // app.use(authRoute);
 connectDatabase();
 // ROUTES FOR OUR API
-var port = process.env.PORT || 7000;        // set our port
+var port = process.env.PORT || 7000 || 5000;        // set our port
 // =============================================================================
 
 var router = express.Router();             

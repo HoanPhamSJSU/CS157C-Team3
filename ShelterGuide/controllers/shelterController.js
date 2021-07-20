@@ -13,6 +13,7 @@ exports.loadShelterController = async (req, res)=> {
         const shelter = await Shelters.find({});
         console.log("send back the result"); 
         console.log(shelter);
+
         return res.send(shelter)
     } catch (e) {
         console.log("err", e)

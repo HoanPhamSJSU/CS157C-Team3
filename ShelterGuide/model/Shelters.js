@@ -25,5 +25,5 @@ const shelterSchema = mongoose.Schema({
 });
 
 
-const Shelters = mongoose.model('Shelters', shelterSchema); 
-module.exports = Shelters
+const shelters = mongoose.model('Shelters', shelterSchema); 
+module.exports = shelters
