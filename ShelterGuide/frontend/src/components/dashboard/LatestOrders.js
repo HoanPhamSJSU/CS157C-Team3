@@ -116,7 +116,7 @@ const LatestOrders = (props) => {
       })
   }, [])
   return (
-  <Card {...props}>r
+  <Card {...props}>
     <CardHeader title="Latest Register User" />
     <Divider />
     <PerfectScrollbar>

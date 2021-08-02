@@ -72,17 +72,7 @@ const items = [
     href: '/app/aboutus',
     icon: AlertCircleIcon,
     title: 'About Us'
-  },
-  {
-    href: '/login',
-    icon: LockIcon,
-    title: 'Login'
-  },
-  {
-    href: '/register',
-    icon: UserPlusIcon,
-    title: 'Register'
-  },
+  }
   // {
   //   href: '/404',
   //   icon: AlertCircleIcon,
@@ -129,7 +119,7 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
           color="textPrimary"
           variant="h5"
         >
-          {user.name}
+          {window.sessionStorage.getItem("email")}
         </Typography>
         <Typography
           color="textSecondary"

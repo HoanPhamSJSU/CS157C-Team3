@@ -22,10 +22,12 @@ exports.loadShelterController = async (req, res)=> {
 }
 
 exports.loadShelterControllerById = async (req, res)=> {
-    const { id } = req.params.id
+    const id  = req.params.id
     try {
         console.log("Loading"); 
-        const shelter = await Shelter.findById(req.params.id).exec();
+        const shelter = await Shelters.findById(id).exec();
+        console.log("send back the result"); 
+        console.log(shelter);
         return res.send(shelter)
     } catch (e) {
         console.log("err", e)

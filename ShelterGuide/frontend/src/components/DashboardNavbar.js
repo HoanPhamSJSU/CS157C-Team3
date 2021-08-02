@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   AppBar,
@@ -16,7 +16,11 @@ import Logo from './Logo';
 
 
 const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
+  const navigate = useNavigate();
   const [notifications] = useState([]);
+  const handleLogout = (e) => {
+    navigate('/login', { replace: true });
+  };
 
   return (
     <AppBar
@@ -40,7 +44,7 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
             </Badge>
           </IconButton>
           <IconButton color="inherit">
-            <InputIcon />
+            <InputIcon onClick={handleLogout}/>
           </IconButton>
         </Hidden>
         <Hidden lgUp>

@@ -3,29 +3,60 @@ var express = require('express')
   , app = express()
   , server = http.createServer(app);
 
+  
+
+var router = express.Router();     
+
 require('dotenv').config();
 const cors = require('cors');
 const bodyParser = require('body-parser'); 
 const connectDatabase = require('./db/db-connection');
-// const app = express();
+const authRoute = require('./routes/auth');
 
 
-app.use(cors()); 
+const corsOptions ={
+  origin:'http://localhost:3000', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
+
+
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : true}));
-// app.use(authRoute);
-connectDatabase();
+app.use(bodyParser.urlencoded({extended : true})); 
+app.use(authRoute);
+connectDatabase(); 
+
+// Login Route
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to Shelter application." });
+});
+
+// User
+const {
+  signupController,
+  signinController,
+  currentUser
+} = require('./controllers/authController');
+
+const { validate } = require('./validators')
+const { rules: registrationRules } = require('./validators/auth/register')
+const { rules: loginRules } = require('./validators/auth/login')
+const { auth } = require('./middleware/auth')
+
 // ROUTES FOR OUR API
 var port = process.env.PORT || 7000 || 5000;        // set our port
 // =============================================================================
 
-var router = express.Router();             
+     
 // Hoan
 const {
   loadShelterController, loadShelterControllerById
@@ -40,11 +71,16 @@ const {
 
 router.use(function(req, res, next) {
   // do logging
-  console.log('Something is happening.');
+  console.log('Routing to API');
   next(); 
 });
 
 app.use('/api', router);
+
+router.route('/register').post([registrationRules, validate], signupController);
+router.route('/currentuser').get(auth,currentUser);
+router.route('/signin').post([loginRules, validate], signinController);
+
 router.route('/shelters').get(loadShelterController);
 router.route('/shelters/:id').get(loadShelterControllerById);
 

@@ -10,10 +10,12 @@ const connectDatabase = () => {
         useCreateIndex: true
     }).then(con => {
         console.log(`MongoDB Database with host: ${con.connection.host}`);
-        console.log(`MongoDB Database status: ${con.connection.status}`);
     }).catch(err => {
         console.log(err);
     })
+    //Get the default connection
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 }
 

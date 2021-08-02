@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import { Box, Container,Grid } from '@material-ui/core';
 import MyGoogleMap from 'src/components/finder/MyGoogleMap';
 import 'src/App.css';
-import LatestProducts from 'src/components/dashboard//LatestProducts';
+import LatestProducts from 'src/components/dashboard/LatestShelters';
 // import Map from 'src/components/finder/MapRender';
 
 
@@ -22,14 +22,6 @@ const CustomerList = () => (
       }}
     >
       <Container maxWidth={false}>
-      {/* <div class='some-page-wrapper'>
-
-      <div className="main-wrapper"> 
-          <LatestProducts sx={{ height: '100%'}} />
-           
-      </div>
-      <MyGoogleMap />
-      </div> */}
 
         <div class='some-page-wrapper'>
           <div class='row'>

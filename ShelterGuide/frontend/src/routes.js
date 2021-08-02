@@ -1,13 +1,12 @@
 import { Navigate } from 'react-router-dom';
 import DashboardLayout from 'src/components/DashboardLayout';
-import Dashboard1 from 'src/pages/Dashboard1';
 import MainLayout from 'src/components/MainLayout';
 import Account from 'src/pages/Account';
 import CustomerList from 'src/pages/CustomerList';
 import Dashboard from 'src/pages/Dashboard';
 import Login from 'src/pages/Login';
 import NotFound from 'src/pages/NotFound';
-import SheltersList from 'src/pages/SheltersList';
+import ShelterDetail from 'src/pages/ShelterDetail';
 import Register from 'src/pages/Register';
 import Settings from 'src/pages/Settings';
 import Finder from 'src/pages/Finder';
@@ -21,9 +20,7 @@ const routes = [
       { path: 'account', element: <Account /> },
       { path: 'customers', element: <CustomerList /> },
       { path: 'dashboard', element: <Dashboard /> },
-      { path: 'dashboard1', element: <Dashboard1 /> },
-      { path: 'dashboard', element: <Dashboard /> },
-      { path: 'shelters', element: <SheltersList /> },
+      { path: 'shelters/:id', element: <ShelterDetail /> },
       { path: 'settings', element: <Settings /> },
       { path: 'finder', element: <Finder /> },
       { path: 'aboutus', element: <AboutUs /> },

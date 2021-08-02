@@ -10,6 +10,7 @@
     "test": "mocha --test"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",

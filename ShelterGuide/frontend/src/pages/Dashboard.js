@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import Budget from 'src/components/dashboard//Budget';
 import LatestOrders from 'src/components/dashboard//LatestOrders';
-import LatestProducts from 'src/components/dashboard//LatestProducts';
+import LatestProducts from 'src/components/dashboard/LatestShelters';
 import LatestProductsFood from 'src/components/dashboard//LatestProductsFood';
 import Sales from 'src/components/dashboard//Sales';
 import TasksProgress from 'src/components/dashboard//TasksProgress';
@@ -48,19 +48,19 @@ const Dashboard = () => {
 
           <Grid
             item
-            lg={4}
+            lg={6}
             md={6}
-            xl={3}
-            xs={12}
+            xl={6}
+            xs={6}
           >
             <LatestProducts sx={{ height: '100%' }} />
           </Grid>
           <Grid
             item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
+            lg={6}
+            md={6}
+            xl={6}
+            xs={6}
           >
          <LatestProductsFood sx={{ height: '100%' }} />
           </Grid>

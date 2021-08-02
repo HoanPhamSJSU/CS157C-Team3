@@ -31,7 +31,7 @@ const AboutUs = () => (
       }}
     >
       
-      <Container maxWidth={true}>
+      <Container maxWidth="sm">
       <h1 style={{
     display: "flex",
     justifyContent: "center",

@@ -6,8 +6,18 @@ import {
   Pagination
 } from '@material-ui/core';
 import ProductListToolbar from 'src/components/product/ProductListToolbar';
-import ProductCard from 'src/components/product//ProductCard';
+import ShelterCard from 'src/components/shelter/ShelterCard';
 import products from 'src/__mocks__/products';
+
+const product = 
+  {
+    id: '60ddd3fb6409b5220ece2510',
+    name: 'HomeFirst',
+    description:'Emergency Housing Consortium is a leading provider of services, shelter, and housing opportunities to the homeless and those at risk of homelessness in Santa Clara County.',
+    imageUrl: '/static/images/products/shelter3.png',
+    rating: '5 stars'
+  }
+;
 
 const ProductList = () => (
   <>
@@ -22,23 +32,21 @@ const ProductList = () => (
       }}
     >
       <Container maxWidth={false}>
-        <ProductListToolbar />
+        {/* <ProductListToolbar /> */}
         <Box sx={{ pt: 3 }}>
           <Grid
             container
             spacing={3}
           >
-            {products.map((product) => (
               <Grid
                 item
                 key={product.id}
-                lg={4}
+                lg={12}
                 md={6}
                 xs={12}
               >
-                <ProductCard product={product} />
+                <ShelterCard product={product} />
               </Grid>
-            ))}
           </Grid>
         </Box>
         <Box
