@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "6105fa59dee21877414fb6d7"
+  },
+  "account_name": "HoanPham",
+  "email": "HoanPham",
+  "password": "$2b$10$oN8MP43LHhcvMAu8aMN8ZOoRFkjNLacdSpLUoJHA28Pws1cy97hze",
+  "account_creation_date": "Jan 1, 2010 12:00:00 AM"
+},{
+  "_id": {
+    "$oid": "6105fd13b90a4e52589392fb"
+  },
+  "account_name": "HoanPham",
+  "email": "hoanpham@sjsu.edu",
+  "password": "$2b$10$oN8MP43LHhcvMAu8aMN8ZOoRFkjNLacdSpLUoJHA28Pws1cy97hze",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61060377e3ac257e40304ed6"
+  },
+  "account_name": "HoanPham",
+  "email": "Hoan.pham@sjsu.edu",
+  "password": "$2b$10$oN8MP43LHhcvMAu8aMN8ZOoRFkjNLacdSpLUoJHA28Pws1cy97hze",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6106c1b6ab080184a0fc00f3"
+  },
+  "account_name": "yomiopham",
+  "email": "hoan@gmail.com",
+  "password": "$2b$10$oN8MP43LHhcvMAu8aMN8ZOoRFkjNLacdSpLUoJHA28Pws1cy97hze",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "610707e8a815da7e405391ee"
+  },
+  "account_name": "yomiopham",
+  "email": "anhtuyet.dinh30@gmail.com",
+  "password": "$2b$10$oN8MP43LHhcvMAu8aMN8ZOoRFkjNLacdSpLUoJHA28Pws1cy97hze",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61070d40266adb718c64f2c8"
+  },
+  "account_name": "yomiopham",
+  "email": "Master@gmail.com",
+  "password": "$2b$10$PVrd6FQ1EBnnKUUXkwn.dOZAIsLxZU53B.zF.cGW17zuYZXn/WiIm",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61070d8b266adb718c64f2cc"
+  },
+  "account_name": "John",
+  "email": "hashPassword@gmail.com",
+  "password": "$2b$10$HXOE/WP.Rswv0R4uw1.pQeTiE4UznWojTkGVQkoSIJxpXjKSrmF3S",
+  "__v": 0
+}]
