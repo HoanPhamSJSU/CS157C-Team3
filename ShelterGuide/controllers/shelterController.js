@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose'); 
 const Shelters = require('../model/Shelters');
 const jwt = require('jsonwebtoken'); 
+const ObjectId = require('mongoose').ObjectID;
 require('dotenv').config(); 
 
 
@@ -22,10 +23,10 @@ exports.loadShelterController = async (req, res)=> {
 }
 
 exports.loadShelterControllerById = async (req, res)=> {
-    const id  = req.params.id
+    const id  = req.params.id;
     try {
         console.log("Loading"); 
-        const shelter = await Shelters.findById(id).exec();
+        const shelter = await Shelters.findById({_id : mongoose.Types.ObjectId(req.params.id.trim())});
         console.log("send back the result"); 
         console.log(shelter);
         return res.send(shelter)

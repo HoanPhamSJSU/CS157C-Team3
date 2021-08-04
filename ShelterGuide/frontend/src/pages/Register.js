@@ -73,7 +73,6 @@ const Register = () => {
     })
       .then((response) => {
         if (response.data.message) {
-          // window.location.reload(false);
           setLoginStatus(response.data.message);
           console.log(response.data.message);
         }

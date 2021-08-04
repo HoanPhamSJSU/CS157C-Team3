@@ -130,11 +130,12 @@ function LatestShelters(props) {
     fetchShelters();
   }, []);
 
+  
 
   return (
     <Card>
       <CardHeader
-        title="Best Overall Shelter"
+        title="Nearest Shelter"
       />
       <Divider />
       <List>
@@ -154,7 +155,7 @@ function LatestShelters(props) {
             <ListItemText
               primary={shelter.shelter_name}
               secondary={
-                <Rating name="half-rating" defaultValue={shelter.rating_score} precision={0.5} readOnly />
+                <Rating name="half-rating" defaultValue={shelter.rating_score} precision={0.5} />
             }
             ></ListItemText>
             <IconButton

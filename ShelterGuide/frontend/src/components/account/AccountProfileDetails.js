@@ -87,7 +87,7 @@ const AccountProfileDetails = (props) => {
   Axios.defaults.withCredentials = true;
   const [currEmail, setCurrEmail] = useState("");
   const [email, setEmail] = useState("");
-  const [fullname, setFullName] = useState("");
+  const [account_name, setAccount_name] = useState("");
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");  const [state, setState] = useState("");
   const[status, setStatus] = useState("");
@@ -100,7 +100,7 @@ const handleCurrEmail = e => {
   
 const handleNameChange = e => {
   console.log("Typed = ${e.target.value}")
-  setFullName(e.target.value)
+  setAccount_name(e.target.value)
 };
 const handleEmailChange = e => {
   console.log("Typed = ${e.target.value}")
@@ -120,47 +120,65 @@ const handleState = e => {
 };
 
 const navigate = useNavigate();
+const [loginStatus, setLoginStatus] = useState('');
+const [accountDetail, setAccountDetail] = useState('');
+const [values, setValues] = useState({
+  firstName: 'Katarina',
+  lastName: 'Smith',
+  email: 'demo@devias.io',
+  phone: '',
+  state: 'Alabama',
+  country: 'USA'
+});
 
-var submitAccount = () => {
-  navigate('/app/dashboard', { replace: true });
-}
-var submitAcc = () => { 
-  Axios.post       ("http://localhost:5000/app/account", {curr: currEmail, name: fullname, email:email, phone:phone, country: country, state:state,
-  }).then((response) => {  
-     window.location.reload(false);
-    // navigate('/app/account', { replace: true })
- });
- };
+
+// const gettingAccount = () => {
+
+//   Axios.post('http://localhost:5000/api/gettingUserInfo', {
+//     email: email
+//   })
+//     .then((response) => {
+//       if (response.data.message) {
+//         setLoginStatus('Invalid Email Or Password');
+//         console.log('response.data.message');
+//       }
+//       if (!response.data.message) {
+//         sessionStorage.setItem('email', email);
+//         sessionStorage.setItem('user', response.data.user[0]);
+//         setValues(response.data.user[0]);
+//         navigate('/app/dashboard', { replace: true });
+//       }
+//     })
+//     .catch((err) => {
+//       setLoginStatus('Invalid Email Or Password');
+//     });
+// };
+
+const gettingAccount = () => {
+  const email = window.sessionStorage.getItem("email");
+  setCurrEmail(email);
+  fetch("http://localhost:5000/api/gettingUserInfo/"+ email)
+  .then(res => res.json())
+  .then(result => {
+    setAccountDetail(result);
+  });
+};
+
 
 useEffect(() => {
-  Axios.get("http://localhost:5000/Login").then((response) => {
-    if(response.data.loggedIn == true){
-      //setLoginStatus(response.data.user[0].name)
-      submitAcc = () => { Axios.post       ("http://localhost:5000/app/account", { curr: currEmail, name: fullname, email:email, phone:phone, country: country, state:state,
-    }).then((response) => {  
-      if(response.data.message) {
-        setStatus(response.data.message)
-    }
-      else {
-        setStatus(response.data.message)
-      }
-    });
-  };
-  }
-    })
-}, [])
+  gettingAccount();
+}, []);
 
-
-
-  const [values, setValues] = useState({
-    firstName: 'Katarina',
-    lastName: 'Smith',
-    email: 'demo@devias.io',
-    phone: '',
-    state: 'Alabama',
-    country: 'USA'
-  });
-
+var submitAcc = () => { 
+  const email = window.sessionStorage.getItem("email");
+  setCurrEmail(email);
+  
+  Axios.post("http://localhost:5000/api/updateUserInfo", {currEmail: currEmail, account_name: account_name, email:email, phone:phone, country: country, state:state,
+  }).then((response) => {  
+    window.sessionStorage.setItem("email",email);
+     navigate('/app/account', { replace: true })
+ });
+ };
   const handleChange = (event) => {
     setValues({
       ...values,
@@ -171,7 +189,7 @@ useEffect(() => {
   return (
     <>
       <Helmet>
-        <title>Login | Material Kit</title>
+        <title>Profile</title>
       </Helmet>
       <Box
         sx={{
@@ -218,7 +236,7 @@ useEffect(() => {
                 container
                 spacing={3}
               >
-              <Grid
+              {/* <Grid
                 item
                 md={6}
                 xs={12}
@@ -229,14 +247,14 @@ useEffect(() => {
                 helperText={touched.currEmail && errors.currEmail}
                 fullWidth
                 onBlur={handleBlur}
-                helperText="Please provide your current email"
-                label="Current Email"
-                name="firstName"
-                onChange={handleCurrEmail}
+                helperText="Please enter to update email"
+                label={accountDetail.email}
+                name="email"
+                onChange={handleEmailChange}
                 required
                 variant="outlined"
               />
-              </Grid>
+              </Grid> */}
               <Grid
                 item
                 md={6}
@@ -248,9 +266,9 @@ useEffect(() => {
                 helperText={touched.name && errors.name}
                 fullWidth
                 onBlur={handleBlur}
-                helperText="Please specify the first name"
-                label="Change Full Name To"
-                name="firstName"
+                helperText="Please enter to update account name"
+                label={accountDetail.account_name}
+                name="account_name"
                 onChange={handleNameChange}
                 required
                 variant="outlined"
@@ -267,7 +285,8 @@ useEffect(() => {
                 helperText={touched.phone && errors.phone}
                 onBlur={handleBlur}
                 fullWidth
-                label="Phone Number"
+                label={accountDetail.phone}
+                helperText="Please enter to update phone number"
                 name="phone"
                 onChange={handlePhone}
                 type="number"
@@ -285,7 +304,8 @@ useEffect(() => {
                 helperText={touched.country && errors.country}
                 fullWidth
                 onBlur={handleBlur}
-                label="Country"
+                label={accountDetail.country}
+                helperText="Please enter to update country"
                 name="country"
                 onChange={handleCountry}
                 required
@@ -299,7 +319,7 @@ useEffect(() => {
                 >
                 <TextField
                 fullWidth
-                label="Select State if USA"
+                label={'Current state: '+accountDetail.state}
                 name="state"
                 onChange={handleState}
                 required

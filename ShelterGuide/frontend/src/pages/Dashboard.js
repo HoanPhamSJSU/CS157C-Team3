@@ -29,7 +29,7 @@ const Dashboard = () => {
   <>
     <h1>{loginStatus}</h1>
     <Helmet>
-      <title>Dashboard | Shelter For Homeless</title>
+      <title>Dashboard | Shelter Guide</title>
     </Helmet>
     <Box
       sx={{
@@ -39,7 +39,7 @@ const Dashboard = () => {
       }}
     >
       <Container maxWidth={false}>
-      <h1>Welcome to Shelter For Homeless</h1> 
+      <h1>Welcome to Shelter Guide</h1> 
       <h1> </h1>
         <Grid
           container

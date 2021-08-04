@@ -17,10 +17,10 @@ exports.auth = (req, res, next) => {
 
     console.log("token", token); 
 
-    if (!token) {
-        console.log("not working")
-        return res.status(401).json({ error: 'Missing token!' })
-    }
+    // if (!token) {
+    //     console.log("not working")
+    //     return res.status(401).json({ error: 'Missing token!' })
+    // }
 
     console.log("getting user"); 
 

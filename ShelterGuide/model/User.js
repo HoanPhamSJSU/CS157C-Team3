@@ -15,6 +15,15 @@ const userSchema = mongoose.Schema({
     password: {
         type: String, 
     },
+    phone: {
+        type: String, 
+    },
+    country: {
+        type: String, 
+    },
+    state: {
+        type: String, 
+    },
     account_creation_date: {
         type: Date, 
     }

@@ -44,7 +44,9 @@ app.get("/", (req, res) => {
 const {
   signupController,
   signinController,
-  currentUser
+  currentUser,
+  gettingUserInfo,
+  updateUserInfo
 } = require('./controllers/authController');
 
 const { validate } = require('./validators')
@@ -78,7 +80,10 @@ router.use(function(req, res, next) {
 app.use('/api', router);
 
 router.route('/register').post([registrationRules, validate], signupController);
-router.route('/currentuser').get(auth,currentUser);
+router.route('/currentuser').get(currentUser);
+router.route('/gettingUserInfo/:id').get(gettingUserInfo);
+
+router.route('/updateUserInfo').post(updateUserInfo);
 router.route('/signin').post([loginRules, validate], signinController);
 
 router.route('/shelters').get(loadShelterController);

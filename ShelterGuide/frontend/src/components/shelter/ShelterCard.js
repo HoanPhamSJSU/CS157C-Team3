@@ -16,19 +16,25 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import MCardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Rating from '@material-ui/lab/Rating';
+import React, { useState, useEffect } from 'react';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 345
   },
   media: {
     height: 200,
-    width:'100%'
-  },
+    width: '100%'
+  }
 });
 
-export default function ShelterCard({ product,distances, ...rest }) {
+export default function ShelterCard({ shelterDetail, distances, ...rest }) {
   const classes = useStyles();
+  const handleSubmit = (e) => {
+    console.log('Typed = ${e.target.value}');
+    // setPassword(e.target.value);
+  };
 
   return (
     <MCard
@@ -41,7 +47,7 @@ export default function ShelterCard({ product,distances, ...rest }) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={shelterDetail.imageUrl}
           title="Contemplative Reptile"
         />
         <MCardContent>
@@ -52,7 +58,11 @@ export default function ShelterCard({ product,distances, ...rest }) {
               pb: 3
             }}
           >
-            <CardMedia alt="Product" image={product.imageUrl} variant="square" />
+            <CardMedia
+              alt="Product"
+              image={shelterDetail.imageUrl}
+              variant="square"
+            />
           </Box>
           <Typography
             align="center"
@@ -60,10 +70,10 @@ export default function ShelterCard({ product,distances, ...rest }) {
             gutterBottom
             variant="h4"
           >
-            {product.name}
+            {shelterDetail.shelter_name}
           </Typography>
           <Typography align="center" color="textPrimary" variant="body1">
-            {product.description}
+            {shelterDetail.description}
           </Typography>
         </MCardContent>
       </CardActionArea>
@@ -79,14 +89,17 @@ export default function ShelterCard({ product,distances, ...rest }) {
                 display: 'flex'
               }}
             >
-              <DirectionsIcon color="action" />
+              <DirectionsIcon
+                color="action"
+                onClick={() => window.open(`${shelterDetail.website}`)}
+              />
               <Typography
                 color="textSecondary"
                 display="inline"
                 sx={{ pl: 1 }}
                 variant="body2"
               >
-                {product.distance}
+                {shelterDetail.distance}
                 {/* {distances.distance} */}
               </Typography>
             </Grid>
@@ -97,15 +110,11 @@ export default function ShelterCard({ product,distances, ...rest }) {
                 display: 'flex'
               }}
             >
-              <StarIcon color="action" />
-              <Typography
-                color="textSecondary"
-                display="inline"
-                sx={{ pl: 1 }}
-                variant="body2"
-              >
-                {product.totalDownloads} Stars
-              </Typography>
+              <Rating
+                name="half-rating"
+                value={parseFloat(shelterDetail.rating_score)}
+                precision={0.5}
+              />
             </Grid>
           </Grid>
         </Box>

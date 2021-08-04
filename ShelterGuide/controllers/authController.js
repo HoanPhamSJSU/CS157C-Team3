@@ -22,7 +22,7 @@ exports.signinController = async (req, res) => {
     // find the user
 
     const user = await User.findOne({
-      email: email
+      email: email,
     });
     // check if user found
     if (!user) {
@@ -30,14 +30,15 @@ exports.signinController = async (req, res) => {
     }
     console.log("Current user: " + user);
     // check if password matches
-    if (!bcrypt.compareSync(password, user.password)) return res.status(401).json({ message: 'Incorrect password!' })
+    if (!bcrypt.compareSync(password, user.password))
+      return res.status(401).json({ message: "Incorrect password!" });
 
     // generate auth token
     const token = jwt.sign(JSON.stringify(user), process.env.SECRET_JWT);
 
     console.log("user return ", token);
 
-    return res.send({ ...{ user }, ...{ token } });
+    return res.json(user);
   } catch (e) {
     console.log("err", e);
     return res.status(500).json({ message: e });
@@ -65,7 +66,7 @@ exports.signupController = async (req, res) => {
 
     console.log("user return ", token);
 
-    return res.send({ ...{ user }, ...{ token } });
+    return res.send(user);
   } catch (e) {
     console.log("Logging error");
     console.log(e.message);
@@ -74,15 +75,53 @@ exports.signupController = async (req, res) => {
 };
 
 exports.currentUser = async (req, res) => {
+  const { email, password } = req.body;
   console.log("current user", req.user);
   const user = await User.findById(req.user._id);
 
   console.log("curr user", user);
-  const token = jwt.sign(JSON.stringify(user), process.env.KEY);
+  // const token = jwt.sign(JSON.stringify(user), process.env.KEY);
 
-  console.log("user return ", token);
+  // console.log("user return ", token);
 
-  return res.send({ ...{ user }, ...{ token } });
+  return res.send(user);
+};
+
+exports.gettingUserInfo = async (req, res) => {
+  const email = req.params.id;
+  try {
+    console.log("Loading");
+    const user = await User.findOne({ email: email });
+    console.log("curr user", user);
+    return res.send(user);
+  } catch (e) {
+    console.log("err", e);
+    return res.status(500).json({ message: e });
+  }
+};
+
+exports.updateUserInfo = async (req, res) => {
+  const { currEmail, account_name, email, phone, country, state } = req.body;
+  try {
+    console.log("Loading");
+    console.log(currEmail);
+    console.log(account_name);
+    console.log(email);
+    const user = await User.update(
+      { email: currEmail },
+      {
+        account_name: account_name,
+        phone: phone,
+        country: country,
+        state: state
+      }
+    );
+    console.log("curr user", user);
+    return res.send(user);
+  } catch (e) {
+    console.log("err", e);
+    return res.status(500).json({ message: e });
+  }
 };
 
 const generateToken = (user) => {

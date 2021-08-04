@@ -63,7 +63,9 @@ const Login = () => {
   const [loginStatus, setLoginStatus] = useState('');
   const [password, setPassword] = useState('');
 
-  const submitLogin = () => {
+  const submitLogin = (e) => {
+    e.preventDefault();
+    console.log("submitting login"); 
     Axios.post('http://localhost:5000/api/signin', {
       email: email,
       password: password
@@ -75,6 +77,7 @@ const Login = () => {
         }
         if (!response.data.message) {
           sessionStorage.setItem('email', email);
+          sessionStorage.setItem('user', response.data.message);
           navigate('/app/dashboard', { replace: true });
         }
       })
@@ -86,7 +89,7 @@ const Login = () => {
   useEffect(() => {
     Axios.get('http://localhost:5000/api/signin').then((response) => {
       if (response.data.loggedIn == true) {
-        navigate('/app/dashboard', { replace: true });
+        navigate('/app/finder', { replace: true });
       }
     });
   }, []);

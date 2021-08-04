@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 
 const user = {
-  avatar: '/static/images/dashboard_resize.png',
+  avatar: '/static/images/dashboard.png',
   city: 'Los Angeles',
   country: 'USA',
   jobTitle: 'Senior Developer',
@@ -25,8 +25,9 @@ const AboutUs = () => (
     </Helmet>
     <Box
       sx={{
-        backgroundColor: 'background.default',
-        minHeight: '100%',
+        backgroundColor: 'pxbackground.default',
+        height: 50,
+        width: 50,
         py: 3
       }}
     >
@@ -39,10 +40,7 @@ const AboutUs = () => (
     backgroundColor: "background.default"
   }}></h1>
         <h1></h1>
-        <img src={user.avatar}  sx={{
-            height: 400,
-            width: 400
-          }}/>
+        <img src={user.avatar}  width={1000} height={1000} mode='fit'/>
       </Container>
     </Box>
   </>
