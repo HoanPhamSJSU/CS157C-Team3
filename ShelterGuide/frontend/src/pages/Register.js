@@ -81,12 +81,6 @@ const Register = () => {
           navigate('/app/dashboard', { replace: true });
           setLoginStatus('Success the account has been registered');
         }
-        /*
-    else {
-     setLoginStatus(response.data.message)
-     navigate('/app/dashboard', { replace: true })
-    }
-    */
       })
       .catch(function (error) {   
           setLoginStatus('Email Already in Use');

@@ -127,10 +127,6 @@ const Login = () => {
           }}
         >
           <Formik
-            initialValues={{
-              email: 'demo@devias.io',
-              password: 'Password123'
-            }}
             validationSchema={Yup.object().shape({
               email: Yup.string()
                 .email('Must be a valid email')

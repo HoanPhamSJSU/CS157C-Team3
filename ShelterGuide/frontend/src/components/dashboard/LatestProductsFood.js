@@ -55,49 +55,10 @@ const products = [
     rating:'3.5 stars',
     updatedAt: moment().subtract(9, 'hours'),
     links: 'https://www.santamariasj.org/'
-  },
+  }
+]
   //
-  {
-    id: uuid(),
-    name: 'Sacred Heart Community Service',
-    imageUrl: '/static/images/products/food6.jpg',
-    rating:'4.0 stars',
-    updatedAt: moment().subtract(10, 'hours'),
-    links: 'https://sacredheartcs.org/'
-  },
-  {
-    id: uuid(),
-    name: 'Hope Center',
-    imageUrl: '/static/images/products/food12.jpg',
-    rating:'3.5 stars',
-    updatedAt: moment().subtract(12, 'hours'),
-    links: 'https://www.hopeservices.org/'
-  },
-  {
-    id: uuid(),
-    name: 'The Lord Pantry',
-    imageUrl: '/static/images/products/food8.jpg',
-    rating:'3.5 stars',
-    updatedAt: moment().subtract(14, 'hours'),
-    links: 'https://www.lordspantrygdlcsj.com/'
-  },
-  {
-    id: uuid(),
-    name: 'LifeMoves - Georgia Travis House',
-    imageUrl: '/static/images/products/food11.jpg',
-    rating:'3.5 stars',
-    updatedAt: moment().subtract(15, 'hours'),
-    links: 'https://www.lifemoves.org/'
-  },
-  {
-    id: uuid(),
-    name: 'Food Pantries',
-    imageUrl: '/static/images/products/food10.jpg',
-    rating:'3.5 stars',
-    updatedAt: moment().subtract(17, 'hours'),
-    links: 'https://www.wesleysj.net/'
-  },
-];
+  
 
 const LatestProductsFood = (props) => (
   <Card {...props}>
